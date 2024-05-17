@@ -71,7 +71,13 @@ app.route("/user/:id")
                 return res.json({"status": "Success"});
             }
         })
-    });
+    })
+
+// app.get("/users/:id", (req, res) => {
+//     const id = Number(req.params.id);
+//     const user = users.find( user => user.id === id);
+//     return res.send(user);
+// });
 
 app.post("/user", (req, res) => {
     const user = req.body;
