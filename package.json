@@ -1,0 +1,15 @@
+{
+  "name": "ishank.node.project01",
+  "version": "1.0.0",
+  "description": "Rest Api testing",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ishank",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
