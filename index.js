@@ -26,7 +26,7 @@ app.route("/user/:id")
     .get((req,res) => {
         const id = Number(req.params.id);
         const user = users.find( user => user.id === id);
-        return res.send(user);
+        return user == null ? res.status(800).send("User does not exist") : res.send(user);
     })
     .patch((req,res) => {
         const id = Number(req.params.id);
@@ -35,8 +35,6 @@ app.route("/user/:id")
 
         const user = users.find (user => user.id === id);
 
-        console.log (user);
-
         const newUser = {id: id, 
             first_name: req.body.first_name != null ? req.body.first_name : user.first_name,
             last_name: req.body.last_name != null ? req.body.last_name : user.last_name,
@@ -44,8 +42,6 @@ app.route("/user/:id")
             gender: req.body.gender != null ? req.body.gender : user.gender,
             ip_address: req.body.ip_address != null ? req.body.ip_address : user.ip_address
         }
-
-        console.log (newUser);
 
         const newUsers = users.map (user => user.id === id ? newUser : user);
 
