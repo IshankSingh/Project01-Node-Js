@@ -1,2 +1,3 @@
 *.txt
 test.js
+node_modules
